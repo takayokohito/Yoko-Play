@@ -19,7 +19,7 @@ class PersonApplication extends Controller {
 
   def inputPersonInfo = Action(parse.json) { request =>
     request.body.validate[Person].map {
-      p =>cd
+      p =>
         Ok("Correct request.")
     }.recoverTotal {
       e =>

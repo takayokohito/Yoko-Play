@@ -4,7 +4,9 @@ import play.api.libs.functional.syntax._
 import play.api.libs.json.Format._
 import play.api.libs.json._
 
-case class Person(age: Int, name: Name, bloodType: Option[String], favoriteNumbers: Seq[Int])
+case class Person(age: Int, name: Name, bloodType: Option[String], favoriteNumbers: Seq[Int]){
+  def getFullName = name.lastName + " " +  name.firstName
+}
 
 object Person {
   implicit val personFormat: Format[Person] = (
